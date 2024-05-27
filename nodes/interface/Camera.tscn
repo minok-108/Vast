@@ -1,0 +1,253 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://fonts/font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/interface/camera.gd" type="Script" id=2]
+[ext_resource path="res://textures/button/button_pressed.png" type="Texture" id=3]
+[ext_resource path="res://nodes/interface/Joystick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://textures/button/button_hover.png" type="Texture" id=5]
+[ext_resource path="res://scripts/interface/joystick_right.gd" type="Script" id=6]
+[ext_resource path="res://textures/interface/min_background.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+outline_size = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="Camera" type="Camera2D"]
+pause_mode = 1
+current = true
+script = ExtResource( 2 )
+
+[node name="FPS" type="Label" parent="."]
+margin_left = -490.0
+margin_top = 252.0
+margin_right = 490.0
+margin_bottom = 290.0
+custom_fonts/font = SubResource( 9 )
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -490.0
+margin_top = -290.0
+margin_right = 490.0
+margin_bottom = -249.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+
+[node name="Win" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 226.0
+margin_top = -280.0
+margin_right = 480.0
+margin_bottom = -240.0
+
+[node name="MinBackground" type="Sprite" parent="Win"]
+position = Vector2( 127, 19 )
+scale = Vector2( 27.4, 5.8 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Win"]
+margin_right = 254.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 6 )
+text = "Level completed!"
+align = 1
+valign = 1
+
+[node name="Lose" type="VBoxContainer" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -75.0
+margin_top = -73.0
+margin_right = 75.0
+margin_bottom = 73.0
+
+[node name="MinBackground" type="Sprite" parent="Lose"]
+position = Vector2( 75, 73 )
+scale = Vector2( 17, 16.6 )
+texture = ExtResource( 7 )
+
+[node name="YouLose" type="Label" parent="Lose"]
+margin_right = 150.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 7 )
+text = "You lose"
+align = 1
+valign = 1
+
+[node name="ButtonAgain" type="TextureButton" parent="Lose"]
+margin_top = 42.0
+margin_right = 150.0
+margin_bottom = 92.0
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+
+[node name="Again" type="Label" parent="Lose/ButtonAgain"]
+margin_top = 1.0
+margin_right = 150.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 4 )
+text = "Again"
+align = 1
+valign = 1
+
+[node name="ButtonMenu" type="TextureButton" parent="Lose"]
+margin_top = 96.0
+margin_right = 150.0
+margin_bottom = 146.0
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+
+[node name="Menu" type="Label" parent="Lose/ButtonMenu"]
+margin_top = 1.0
+margin_right = 150.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 5 )
+text = "Menu"
+align = 1
+valign = 1
+
+[node name="Paused" type="VBoxContainer" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -75.0
+margin_top = -73.0
+margin_right = 75.0
+margin_bottom = 73.0
+
+[node name="MinBackground" type="Sprite" parent="Paused"]
+position = Vector2( 75, 73 )
+scale = Vector2( 17, 16.6 )
+texture = ExtResource( 7 )
+
+[node name="Paused" type="Label" parent="Paused"]
+margin_right = 150.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 8 )
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="ButtonContinue" type="TextureButton" parent="Paused"]
+margin_top = 42.0
+margin_right = 150.0
+margin_bottom = 92.0
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+
+[node name="Continue" type="Label" parent="Paused/ButtonContinue"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Continue"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ButtonMenu" type="TextureButton" parent="Paused"]
+margin_top = 96.0
+margin_right = 150.0
+margin_bottom = 146.0
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+
+[node name="Menu" type="Label" parent="Paused/ButtonMenu"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 2 )
+text = "Menu"
+align = 1
+valign = 1
+
+[node name="ButtonPause" type="TextureButton" parent="."]
+margin_left = -490.0
+margin_top = -290.0
+margin_right = -340.0
+margin_bottom = -240.0
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+
+[node name="Pause" type="Label" parent="ButtonPause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -25.0
+margin_right = 75.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 5 )
+text = "Pause"
+align = 1
+valign = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VirtualLeft" parent="CanvasLayer" instance=ExtResource( 4 )]
+anchor_top = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 360.0
+margin_right = 240.0
+margin_bottom = 560.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VirtualRight" parent="CanvasLayer2" instance=ExtResource( 4 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -240.0
+margin_top = -240.0
+margin_right = -40.0
+margin_bottom = -40.0
+script = ExtResource( 6 )
+
+[connection signal="pressed" from="Lose/ButtonAgain" to="." method="_on_ButtonAgain_pressed"]
+[connection signal="pressed" from="Lose/ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="pressed" from="Paused/ButtonContinue" to="." method="_on_ButtonContinue_pressed"]
+[connection signal="pressed" from="Paused/ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="pressed" from="ButtonPause" to="." method="_on_ButtonPause_pressed"]

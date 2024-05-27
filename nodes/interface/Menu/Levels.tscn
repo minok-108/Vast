@@ -1,0 +1,379 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://textures/button/button_pressed.png" type="Texture" id=1]
+[ext_resource path="res://textures/button/button_hover.png" type="Texture" id=2]
+[ext_resource path="res://fonts/font.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scripts/interface/menu/levels.gd" type="Script" id=4]
+[ext_resource path="res://textures/interface/min_background.png" type="Texture" id=5]
+[ext_resource path="res://scripts/interface/menu/goal.gd" type="Script" id=6]
+[ext_resource path="res://sounds/buttons.mp3" type="AudioStream" id=7]
+[ext_resource path="res://textures/interface/level_completed.png" type="Texture" id=8]
+[ext_resource path="res://textures/hostile/hostile_2.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[node name="Levels" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -229.0
+margin_top = -79.0
+margin_right = 229.0
+margin_bottom = 79.0
+columns = 3
+
+[node name="ButtonLevel1" type="TextureButton" parent="GridContainer"]
+margin_right = 150.0
+margin_bottom = 50.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level1" type="Label" parent="GridContainer/ButtonLevel1"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 1"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel1"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel2" type="TextureButton" parent="GridContainer"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 50.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level2" type="Label" parent="GridContainer/ButtonLevel2"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 2"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel2"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel3" type="TextureButton" parent="GridContainer"]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 50.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level3" type="Label" parent="GridContainer/ButtonLevel3"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 3"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel3"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel4" type="TextureButton" parent="GridContainer"]
+margin_top = 54.0
+margin_right = 150.0
+margin_bottom = 104.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level4" type="Label" parent="GridContainer/ButtonLevel4"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 4"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel4"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel5" type="TextureButton" parent="GridContainer"]
+margin_left = 154.0
+margin_top = 54.0
+margin_right = 304.0
+margin_bottom = 104.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level5" type="Label" parent="GridContainer/ButtonLevel5"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 5"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel5"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel6" type="TextureButton" parent="GridContainer"]
+margin_left = 308.0
+margin_top = 54.0
+margin_right = 458.0
+margin_bottom = 104.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level6" type="Label" parent="GridContainer/ButtonLevel6"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 6"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel6"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel7" type="TextureButton" parent="GridContainer"]
+margin_top = 108.0
+margin_right = 150.0
+margin_bottom = 158.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level7" type="Label" parent="GridContainer/ButtonLevel7"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 7"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel7"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel8" type="TextureButton" parent="GridContainer"]
+margin_left = 154.0
+margin_top = 108.0
+margin_right = 304.0
+margin_bottom = 158.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level8" type="Label" parent="GridContainer/ButtonLevel8"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 8"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel8"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonLevel9" type="TextureButton" parent="GridContainer"]
+margin_left = 308.0
+margin_top = 108.0
+margin_right = 458.0
+margin_bottom = 158.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Level9" type="Label" parent="GridContainer/ButtonLevel9"]
+margin_right = 150.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Level 9"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="GridContainer/ButtonLevel9"]
+position = Vector2( 10, 10 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="ButtonBack" type="TextureButton" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 60.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Menu" type="Label" parent="ButtonBack"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.5
+margin_top = -20.5
+margin_right = 41.5
+margin_bottom = 20.5
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="ButtonInfinite" type="TextureButton" parent="."]
+margin_left = 840.0
+margin_top = 10.0
+margin_right = 990.0
+margin_bottom = 60.0
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Infinite" type="Label" parent="ButtonInfinite"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.5
+margin_top = -20.5
+margin_right = 41.5
+margin_bottom = 20.5
+custom_fonts/font = SubResource( 2 )
+text = "Infinite"
+align = 1
+valign = 1
+
+[node name="Goal" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -206.0
+margin_top = -179.0
+margin_right = 209.0
+margin_bottom = -10.0
+script = ExtResource( 6 )
+
+[node name="MinBackground" type="Sprite" parent="Goal"]
+position = Vector2( 207.5, 84.5 )
+scale = Vector2( 41.5, 16.9 )
+texture = ExtResource( 5 )
+
+[node name="Level" type="Label" parent="Goal"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -142.0
+margin_top = -74.5
+margin_right = 142.0
+margin_bottom = -36.5
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+
+[node name="Goal" type="Label" parent="Goal"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 58.0
+margin_right = -10.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+
+[node name="Completed" type="Label" parent="Goal"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 140.0
+margin_right = -320.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 3 )
+text = "Completed"
+align = 1
+valign = 1
+
+[node name="ButtonGo" type="TextureButton" parent="Goal"]
+anchor_left = 0.5
+anchor_top = 0.767
+anchor_right = 0.5
+anchor_bottom = 0.767
+margin_left = -75.0
+margin_top = -20.623
+margin_right = 75.0
+margin_bottom = 29.377
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Go" type="Label" parent="Goal/ButtonGo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -23.0
+margin_top = -19.0
+margin_right = 23.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+text = "Go"
+align = 1
+valign = 1
+
+[node name="Hostile21" type="Sprite" parent="."]
+position = Vector2( 103, 231 )
+rotation = 0.87441
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
+[node name="Hostile22" type="Sprite" parent="."]
+position = Vector2( 869, 437 )
+rotation = -1.09258
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
+[node name="Hostile23" type="Sprite" parent="."]
+position = Vector2( 248, 511 )
+rotation = -0.328122
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="GridContainer/ButtonLevel1" to="." method="_on_ButtonLevel1_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel2" to="." method="_on_ButtonLevel2_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel3" to="." method="_on_ButtonLevel3_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel4" to="." method="_on_ButtonLevel4_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel5" to="." method="_on_ButtonLevel5_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel6" to="." method="_on_ButtonLevel6_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel7" to="." method="_on_ButtonLevel7_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel8" to="." method="_on_ButtonLevel8_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonLevel9" to="." method="_on_ButtonLevel9_pressed"]
+[connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
+[connection signal="pressed" from="ButtonInfinite" to="." method="_on_ButtonInfinite_pressed"]
+[connection signal="pressed" from="Goal/ButtonGo" to="." method="_on_ButtonGo_pressed"]
